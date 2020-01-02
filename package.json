@@ -1,0 +1,19 @@
+{
+  "name": "jedaero-crawler",
+  "version": "1.0.0",
+  "description": "jedaerocrawler",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack && node dist/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jnuro",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
