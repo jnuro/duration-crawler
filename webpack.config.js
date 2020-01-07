@@ -1,11 +1,12 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './index.js',
     output: {
         path: path.resolve(__dirname, 'dist/'),
         filename: 'bundle.js'
     },
+    target: 'node',
     module: {
         rules: [
           {
@@ -22,6 +23,9 @@ module.exports = {
             }
           }
         ]
+    },
+    node: {
+      __dirname: true,
     },
     devtool: 'source-map',
     // https://webpack.js.org/concepts/mode/#mode-development
