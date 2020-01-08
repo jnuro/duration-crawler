@@ -16,15 +16,17 @@ export default async function App() {
         await git().silent(true).clone(remote);
         console.log('database was successfully cloned');
         const loc = `${__dirname}/../${REPONAME}`
-        
-        await fs.writeFile(`${loc}/a.json`, JSON.stringify(arr), 'utf8', (err) => {
+        const file = 'cron.json'
+        await fs.writeFile(`${loc}/${file}`, JSON.stringify(arr), 'utf8', (err) => {
             if(err) throw err;
             console.log("file was saved")
         });
 
         const databaseGit = git(loc);
-        console.log(await databaseGit.getRemotes())
-
+        await databaseGit.add(`.`)
+        await databaseGit.commit('cron academyschedule')
+        await databaseGit.push('origin', 'master')
+        console.log("pushed")
     } catch(err) {
         console.error('failed: ', err)
     }
