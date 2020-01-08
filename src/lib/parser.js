@@ -43,7 +43,7 @@ export default function parser(body = "") {
                     return $(this).last().text().match("(대동제)|(단과대학)")
                 })
                 .get()
-                .map(item => item.first().text())
+                .map(item => item.first().text().trim())
         })(),
     }
 }
